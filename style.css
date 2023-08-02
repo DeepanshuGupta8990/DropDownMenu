@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+#body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #67a5d4;
+   
+}
+img{
+    height: 6rem;
+    display: inline;
+    border-radius: 50%;
+    transition: 0.3s linear;
+    cursor: pointer;
+    object-fit: cover;
+    /* user-select: none; */
+    pointer-events: none;
+}
+img:hover{
+    transform: scale(1.1);
+}
+.card{
+    position: relative;
+    width: 350px;
+    /* height: 400px; */
+    height: 120px;
+    background-color: #fff;
+    box-shadow: 0 50px 50px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: 0.4s linear;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+}
+.card .content .imgBox{
+     position: relative;
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     overflow: hidden;
+     
+}
+.card .content h2{
+  margin-left: 4px;
+  font-size: 1.3em;
+}
+.card .content h2 span {
+    font-size: 15px;
+    font-weight: 400;
+    color: #999;
+
+}
+
+.navigation{
+    position: relative;
+    top: 25px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding: 20px 0;
+    margin-left: 10px;
+}
+.navigation li{
+    list-style: none;
+    margin: 15px 0;
+}
+.navigation li a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #555;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.navigation li a:hover{
+    color: #36b3ff;
+}
+.navigation li a ion-icon{
+    font-size: 1.6em;
+    margin-right: 15px;
+
+}
+.toggle{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: 0;
+    right: 0;
+    background: #36b3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s linear;
+    animation: animate 1.5s linear infinite;
+}
+@keyframes animate {
+    0%{
+        box-shadow: 0px 0px 2px 2px red;
+    }
+    50%{
+        box-shadow: 0px 0px 2px 2px red,
+                    0px 0px 4px 2px red,
+                    0px 0px 6px 2px red,
+                    0px 0px 8px 2px red;
+    }
+    100%{
+        box-shadow: 0px 0px 2px 2px red;
+    }
+}
+.toggle:active{
+    transform: scale(0.8);
+}
+.toggle:hover{
+    opacity: 1;
+}
+.toggle ion-icon{
+    columns: #fff;
+    font-size: 1.4em;
+    transition: 0.5s ease-in-out;
+}
+.card.active{
+    height: 400px;
+}
+.card.active .toggle ion-icon{
+  transform: rotate(180deg);
+}
